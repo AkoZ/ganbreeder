@@ -11,12 +11,12 @@ tentative d'install sous WSL2 (un linux sous windows10) qui possède aussi les d
 mais qui bug lors des pip installs alors que sous powershell c ok (car anaconda ok).
 
 ### Prerequisites
-c gros mais y aurait bien un docker à installer !!?
+ * docker à installer facilement sous win10PRO, ... il contient le docker-compose aussi (pas sous linux).
 * Install Python 3 + pip (for the GAN server) (sous win10: pip a bien ts les requirements)
 * Install NodeJS + npm (for the frontend) (installé en 10s avec pip sous powershel .. !! 
  * pip install nodejs puis pip install nodejs npm (module de plus...)
 * Install a PostgreSQL server - (par défaut il semble installé dans un docker, ts les fichiers du requirements  servent au server sous docker)
-** lequel s'est bine installé avec pip ( pip install postgres )
+** lequel s'est bien installé avec pip ( pip install postgres )
 
 ### requirements.txt recopié:
 sous poweshell (win10) j'ai tout installé avec pip :
@@ -25,6 +25,17 @@ en bref il suffirait d'avoir le fichier dans son dossier: pip install -r require
 qui contient:
 Flask==1.0.2   Flask-Cors==3.0.7   tensorflow==1.12.0   tensorflow_hub==0.2.0   scipy==1.1.0   Pillow==5.3.0
 je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
+* seulemnt ensuite c'est sous docker-compose que ça va chercher le requirements.txt et s'installer (au moment du docker-compose build)
+
+### Start it !
+* on démarre un essai avec  dans le rép \server powershell: docker-compose up 
+2 - ensuite ouverture d'une seconde console.. powershel.. et docker-compose exec server node make_randoms.js
+* et qd installé : on peut reprendre avec -   docker-compose restart server
+* il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? vérifier cette partie dite publique !
+* et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js
+* le tout est stoppé avec   -   docker-compose down
+
+
 
 ### Problèmes rencontrés et résolus .. mais mal notés
 * pip upgrade : utiliser simplement : easy_install pip
