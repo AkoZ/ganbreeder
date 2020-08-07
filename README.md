@@ -28,7 +28,9 @@ qui contient:
 Flask==1.0.2   Flask-Cors==3.0.7   tensorflow==1.12.0   tensorflow_hub==0.2.0   scipy==1.1.0   Pillow==5.3.0
 je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 
-
+### Problèmes rencontrés et résolus .. mais mal notés
+* pip upgrade : utiliser simplement : easy_install pip
+* docker-compose down pour arrêter et .. rebuild:  docker-compose build puis redémarre: 
 ### Launch the GAN server
 ```bash
 cd gan_server
