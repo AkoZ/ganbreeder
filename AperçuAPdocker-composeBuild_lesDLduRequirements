@@ -1,0 +1,118 @@
+sous powershell
+dans le rép 
+```bash
+\ganbreeder\server> docker-compose build
+db uses an image, skipping
+Building gan_server
+Step 1/5 : FROM python:3.6.9-buster
+ ---> 5bf410...
+Step 2/5 : ADD ./gan_server /gan_server
+ ---> 700093...
+Step 3/5 : WORKDIR /gan_server
+ ---> Running in 8cca4...
+Removing intermediate container 8cca4...
+ ---> 30a9c...
+Step 4/5 : RUN pip install -r /gan_server/requirements.txt
+ ---> Running in 0a1377...
+Collecting Flask==1.0.2
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting Flask-Cors==3.0.7
+  Downloading https://files.pythonhosted.org/packages/65/cb/683f71ff8daa3aea0a5cbb276074de39f9ab66d3fbb8ad5efb5bb83e90d2/Flask_Cors-3.0.7-py2.py3-none-any.whl
+Collecting tensorflow==1.14.0
+  Downloading https://files.pythonhosted.org/packages/de/f0/96fb2e0412ae9692dbf400e5b04432885f677ad6241c088ccc5fe7724d69/tensorflow-1.14.0-cp36-cp36m-manylinux1_x86_64.whl (109.2MB)
+Collecting tensorflow_hub==0.2.0
+  Downloading https://files.pythonhosted.org/packages/5a/76/18c9aaf24f1b888bafa40351493815050e100098b4782d634b307fb1ebc8/tensorflow_hub-0.2.0-py2.py3-none-any.whl (66kB)
+Collecting scipy==1.1.0
+  Downloading https://files.pythonhosted.org/packages/a8/0b/f163da98d3a01b3e0ef1cab8dd2123c34aee2bafbb1c5bffa354cc8a1730/scipy-1.1.0-cp36-cp36m-manylinux1_x86_64.whl (31.2MB)
+Collecting Pillow==5.3.0
+  Downloading https://files.pythonhosted.org/packages/62/94/5430ebaa83f91cc7a9f687ff5238e26164a779cca2ef9903232268b0a318/Pillow-5.3.0-cp36-cp36m-manylinux1_x86_64.whl (2.0MB)
+Collecting Werkzeug>=0.14
+  Downloading https://files.pythonhosted.org/packages/cc/94/5f7079a0e00bd6863ef8f1da638721e9da21e5bacee597595b318f71d62e/Werkzeug-1.0.1-py2.py3-none-any.whl (298kB)
+Collecting Jinja2>=2.10
+  Downloading https://files.pythonhosted.org/packages/30/9e/f663a2aa66a09d838042ae1a2c5659828bb9b41ea3a6efa20a20fd92b121/Jinja2-2.11.2-py2.py3-none-any.whl (125kB)
+Collecting click>=5.1
+  Downloading https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl (82kB)
+Collecting itsdangerous>=0.24
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Six
+  Downloading https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl
+Collecting keras-applications>=1.0.6
+  Downloading https://files.pythonhosted.org/packages/71/e3/19762fdfc62877ae9102edf6342d71b28fbfd9dea3d2f96a882ce099b03f/Keras_Applications-1.0.8-py3-none-any.whl (50kB)
+Collecting gast>=0.2.0
+  Downloading https://files.pythonhosted.org/packages/d6/84/759f5dd23fec8ba71952d97bcc7e2c9d7d63bdc582421f3cd4be845f0c98/gast-0.3.3-py2.py3-none-any.whl
+Collecting protobuf>=3.6.1
+  Downloading https://files.pythonhosted.org/packages/63/14/dc43f81adc543c435cfeb45dd4ac048a97a1eb621c2ccb68ab3d15118737/protobuf-3.12.4-cp36-cp36m-manylinux1_x86_64.whl (1.3MB)
+Collecting absl-py>=0.7.0
+  Downloading https://files.pythonhosted.org/packages/1a/53/9243c600e047bd4c3df9e69cfabc1e8004a82cac2e0c484580a78a94ba2a/absl-py-0.9.0.tar.gz (104kB)
+Collecting tensorflow-estimator<1.15.0rc0,>=1.14.0rc0
+  Downloading https://files.pythonhosted.org/packages/3c/d5/21860a5b11caf0678fbc8319341b0ae21a07156911132e0e71bffed0510d/tensorflow_estimator-1.14.0-py2.py3-none-any.whl (488kB)
+Collecting google-pasta>=0.1.6
+  Downloading https://files.pythonhosted.org/packages/a3/de/c648ef6835192e6e2cc03f40b19eeda4382c49b5bafb43d88b931c4c74ac/google_pasta-0.2.0-py3-none-any.whl (57kB)
+Collecting grpcio>=1.8.6
+  Downloading https://files.pythonhosted.org/packages/f0/61/91641ea993600493d37f4897dc14ef396086868c586869937f6d57479a13/grpcio-1.31.0-cp36-cp36m-manylinux2014_x86_64.whl (3.4MB)
+Requirement already satisfied: wheel>=0.26 in /usr/local/lib/python3.6/site-packages (from tensorflow==1.14.0->-r /gan_server/requirements.txt (line 3)) (0.33.6)
+Collecting wrapt>=1.11.1
+  Downloading https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz
+Collecting astor>=0.6.0
+  Downloading https://files.pythonhosted.org/packages/c3/88/97eef84f48fa04fbd6750e62dcceafba6c63c81b7ac1420856c8dcc0a3f9/astor-0.8.1-py2.py3-none-any.whl
+Collecting tensorboard<1.15.0,>=1.14.0
+  Downloading https://files.pythonhosted.org/packages/91/2d/2ed263449a078cd9c8a9ba50ebd50123adf1f8cfbea1492f9084169b89d9/tensorboard-1.14.0-py3-none-any.whl (3.1MB)
+Collecting keras-preprocessing>=1.0.5
+  Downloading https://files.pythonhosted.org/packages/79/4c/7c3275a01e12ef9368a892926ab932b33bb13d55794881e3573482b378a7/Keras_Preprocessing-1.1.2-py2.py3-none-any.whl (42kB)
+Collecting termcolor>=1.1.0
+  Downloading https://files.pythonhosted.org/packages/8a/48/a76be51647d0eb9f10e2a4511bf3ffb8cc1e6b14e9e4fab46173aa79f981/termcolor-1.1.0.tar.gz
+Collecting numpy<2.0,>=1.14.5
+  Downloading https://files.pythonhosted.org/packages/b1/9a/7d474ba0860a41f771c9523d8c4ea56b084840b5ca4092d96bdee8a3b684/numpy-1.19.1-cp36-cp36m-manylinux2010_x86_64.whl (14.5MB)
+Collecting MarkupSafe>=0.23
+  Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Collecting h5py
+  Downloading https://files.pythonhosted.org/packages/60/06/cafdd44889200e5438b897388f3075b52a8ef01f28a17366d91de0fa2d05/h5py-2.10.0-cp36-cp36m-manylinux1_x86_64.whl (2.9MB)
+Requirement already satisfied: setuptools in /usr/local/lib/python3.6/site-packages (from protobuf>=3.6.1->tensorflow==1.14.0->-r /gan_server/requirements.txt (line 3)) (41.6.0)
+Collecting markdown>=2.6.8
+  Downloading https://files.pythonhosted.org/packages/a4/63/eaec2bd025ab48c754b55e8819af0f6a69e2b1e187611dd40cbbe101ee7f/Markdown-3.2.2-py3-none-any.whl (88kB)
+Collecting importlib-metadata; python_version < "3.8"
+  Downloading https://files.pythonhosted.org/packages/8e/58/cdea07eb51fc2b906db0968a94700866fc46249bdc75cac23f9d13168929/importlib_metadata-1.7.0-py2.py3-none-any.whl
+Collecting zipp>=0.5
+  Downloading https://files.pythonhosted.org/packages/b2/34/bfcb43cc0ba81f527bc4f40ef41ba2ff4080e047acb0586b56b3d017ace4/zipp-3.1.0-py3-none-any.whl
+Building wheels for collected packages: absl-py, wrapt, termcolor
+  Building wheel for absl-py (setup.py): started
+  Building wheel for absl-py (setup.py): finished with status 'done'
+  Created wheel for absl-py: filename=absl_py-0.9.0-cp36-none-any.whl size=121931 sha256=db0366561334c50fd1f98c3a58a72648f0676da26e8287afacac6f2855338f15
+  Stored in directory: /root/.cache/pip/wheels/8e/28/49/fad4e7f0b9a1227708cbbee4487ac8558a7334849cb81c813d
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.12.1-cp36-cp36m-linux_x86_64.whl size=75218 sha256=7c026f28619669d42939234e94930ef5e643c101d9a032d7d56c91b2a21e9c99
+  Stored in directory: /root/.cache/pip/wheels/b1/c2/ed/d62208260edbd3fa7156545c00ef966f45f2063d0a84f8208a
+  Building wheel for termcolor (setup.py): started
+  Building wheel for termcolor (setup.py): finished with status 'done'
+  Created wheel for termcolor: filename=termcolor-1.1.0-cp36-none-any.whl size=4832 sha256=33c9aa400ba16ad6bd12220e74092586b0621ad884f4a025a0010f77c97ffb7e
+  Stored in directory: /root/.cache/pip/wheels/7c/06/54/bc84598ba1daf8f970247f550b175aaaee85f68b4b0c5ab2c6
+Successfully built absl-py wrapt termcolor
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, click, itsdangerous, Flask, Six, Flask-Cors, numpy, h5py, keras-applications, gast, protobuf, absl-py, tensorflow-estimator, google-pasta, grpcio, wrapt, astor, zipp, importlib-metadata, markdown, tensorboard, keras-preprocessing, termcolor, tensorflow, tensorflow-hub, scipy, Pillow
+Successfully installed Flask-1.0.2 Flask-Cors-3.0.7 Jinja2-2.11.2 MarkupSafe-1.1.1 Pillow-5.3.0 Six-1.15.0 Werkzeug-1.0.1 absl-py-0.9.0 astor-0.8.1 click-7.1.2 gast-0.3.3 google-pasta-0.2.0 grpcio-1.31.0 h5py-2.10.0 importlib-metadata-1.7.0 itsdangerous-1.1.0 keras-applications-1.0.8 keras-preprocessing-1.1.2 markdown-3.2.2 numpy-1.19.1 protobuf-3.12.4 scipy-1.1.0 tensorboard-1.14.0 tensorflow-1.14.0 tensorflow-estimator-1.14.0 tensorflow-hub-0.2.0 termcolor-1.1.0 wrapt-1.12.1 zipp-3.1.0
+WARNING: You are using pip version 19.3.1; however, version 20.2.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Removing intermediate container 0a1377187078
+ ---> af6f2a7666b9
+Step 5/5 : CMD ["python", "server.py"]
+ ---> Running in 8684e...
+Removing intermediate container 8684e...
+ ---> 96b04e...
+Successfully built 96b04e...
+Successfully tagged ganbreeder_gan_server:latest
+Building server
+Step 1/4 : FROM node:8.16.2-buster
+ ---> afc8b6...
+Step 2/4 : ADD ./server /server
+ ---> b16ab5...
+Step 3/4 : WORKDIR /server
+ ---> Running in 3cd4f...
+Removing intermediate container 3cd4f...
+ ---> 0d3607...
+Step 4/4 : CMD npm install && [ -d public/img ] || mkdir public/img && node_modules/knex/bin/cli.js migrate:latest && node updatecache.js &&  node server.js
+ ---> Running in 20c33...
+Removing intermediate container 20c33...
+ ---> 5d425a...
+Successfully built 5d425a...
+Successfully tagged ganbreeder_server:latest
+```
