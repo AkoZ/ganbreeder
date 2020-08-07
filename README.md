@@ -16,8 +16,7 @@ mais qui bug lors des pip installs alors que sous powershell c ok (car anaconda 
 c gros mais y aurait bien un docker à installer !!?
 * Install Python 3 + pip (for the GAN server) (sous win10: pip a bien ts les requirements)
 * Install NodeJS + npm (for the frontend) (installé en 10s avec pip sous powershel .. !! 
- * pip install nodejs 
- * pip install nodejs npm (module de plus...)
+ * pip install nodejs puis pip install nodejs npm (module de plus...)
 * Install a PostgreSQL server - (par défaut il semble installé dans un docker, ts les fichiers du requirements  servent au server sous docker)
 ** lequel s'est bine installé avec pip ( pip install postgres )
 
