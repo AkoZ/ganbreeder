@@ -1,7 +1,6 @@
 sous powershell
-dans le rép 
+dans le rép \ganbreeder\server> docker-compose build
 ```bash
-\ganbreeder\server> docker-compose build
 db uses an image, skipping
 Building gan_server
 Step 1/5 : FROM python:3.6.9-buster
