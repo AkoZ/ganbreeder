@@ -18,7 +18,8 @@ c gros mais y aurait bien un docker à installer !!?
 * Install NodeJS + npm (for the frontend) (installé en 10s avec pip sous powershel .. !! 
 ** pip install nodejs 
 ** pip install nodejs npm (module de plus...)
-* Install a PostgreSQL server
+* Install a PostgreSQL server - (par défaut il semble installé dans un docker, ts les fichiers du requirements  servent au server sous docker)
+** lequel s'est bine installé avec pip ( pip install postgres )
 
 ### requirements.txt recopié:
 sous poweshell (win10) j'ai tout installé avec pip :
