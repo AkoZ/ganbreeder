@@ -40,6 +40,8 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 ### Problèmes rencontrés et résolus .. mais mal notés
 * pip upgrade : utiliser simplement : easy_install pip
 * docker-compose down pour arrêter et .. rebuild:  docker-compose build puis redémarre: 
+* aussi dans le docker-compose.YAML ..   # changer  les ports écrit en double - "5432:5432"  en "5432" (vu sur un forum ...
+
 ### Launch the GAN server
 ```bash
 cd gan_server
