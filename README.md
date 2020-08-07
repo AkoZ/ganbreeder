@@ -1,17 +1,29 @@
 # Ganbreeder
 
-[Ganbreeder](https://ganbreeder.app) is a collaborative art tool for discovering images. Images are 'bred' by having children, mixing with other images and being shared via their URL. This is an experiment in using breeding + sharing as methods of exploring high complexity spaces. GAN's are simply the engine enabling this. Ganbreeder is very similar to, and named after, Picbreeder. It is also inspired by an earlier project of mine [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.Ganbreeder uses [these](https://tfhub.dev/deepmind/biggan-128/2) models.
+[Ganbreeder](https://ganbreeder.app) is a collaborative art tool for discovering images. Images are 'bred' by having children, mixing with other images and being shared via their URL. This is an experiment in using breeding + sharing as methods of exploring high complexity spaces. GAN's are simply the engine enabling this. Ganbreeder is very similar to, and named after, **Picbreeder.**
+*It is also inspired by an earlier project of mine [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.*
+Ganbreeder uses [these](https://tfhub.dev/deepmind/biggan-128/2) models (BigGAn).
 
 This code was made in a weekend and hasn't been cleaned up or documented yet. There are also improvements to make to scalability.
 
-Pull request are more than welcome :)
+retaken to give the best of install ..as it's a real hard wordk to understand how to .. not enough keys/steps described
 
 ## How to use
+tentative d'install sous WSL2 (un linux sous windows10) qui possède aussi les drivers gpu ..
+mais qui bug lors des pip installs alors que sous powershell c ok (car anaconda ok).
 
 ### Prerequisites
-* Install Python 3 + pip (for the GAN server)
-* Install NodeJS + npm (for the frontend)
+* Install Python 3 + pip (for the GAN server) (sous win10: pip a bien ts les requirements)
+* Install NodeJS + npm (for the frontend) (instalklé en 10s avec pip sous powershel .. !! 
+** pip install nodejs 
+** pip install nodejs npm (module de plus...)
 * Install a PostgreSQL server
+
+### requirements.txt recopié:
+sous poweshell (win10) j'ai tout installé avec pip :
+pip install tensorflow .. pip install tensorflow_hub .. flask .. flask_cors
+en bref il suffirait d'avoir le fichier dans son dossier: pip install -r requirements.txt 
+
 
 ### Launch the GAN server
 ```bash
