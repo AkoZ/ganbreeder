@@ -34,13 +34,14 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 * il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? vérifier cette partie dite publique !
 * et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js
 * le tout est stoppé avec   -   docker-compose down
-
+aussi docker-compose up -d    starts the containers in the background and leaves them running.
 
 
 ### Problèmes rencontrés et résolus .. mais mal notés
 * pip upgrade : utiliser simplement : easy_install pip
 * docker-compose down pour arrêter et .. rebuild:  docker-compose build puis redémarre: 
 * aussi dans le docker-compose.YAML ..   # changer  les ports écrit en double - "5432:5432"  en "5432" (vu sur un forum ...
+* all done .. donc le programme a bien tourné ..mais l'image n'est pas là !?
 
 ### Launch the GAN server
 ```bash
