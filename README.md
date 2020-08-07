@@ -4,8 +4,6 @@
 
 Ganbreeder uses [these](https://tfhub.dev/deepmind/biggan-128/2) models (BigGAn).
 
-This code was made in a weekend and hasn't been cleaned up or documented yet. There are also improvements to make to scalability.
-
 **Retaken to give the best of install** ..as it's a real hard wordk to understand how to ..coz not enough keys/steps described
 
 ## How to use
@@ -85,4 +83,6 @@ Restart only frontend server (to avoid backend initialization wait):
 docker-compose restart server
 ```
 
-pour memoire: *It is also inspired by an earlier project of mine [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.*
+pour memoire: 
+* This code was made in a weekend and hasn't been cleaned up or documented yet. There are also improvements to make to scalability.
+* It is also inspired by an earlier project of mine [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.*
