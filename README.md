@@ -59,7 +59,6 @@ For quick hacking, if you have Docker at your disposal, you can spawn a PostgreS
 docker run -p 5432:5432 --name ganbreederpostgres -e POSTGRES_PASSWORD=ganbreederpostgres -d postgres
 ```
 With that simple scenario, the database and user would be `postgres` and the password would be `ganbreederpostgres`
-
 Copy the file `server/example_secrets.js` to `secrets.js` and modify it to fit your environment.
 
 ### Launch the frontend
