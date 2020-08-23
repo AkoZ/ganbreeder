@@ -1,10 +1,11 @@
 # Ganbreeder
-
 [Ganbreeder](https://ganbreeder.app) is a collaborative art tool for discovering images. Images are 'bred' by having children, mixing with other images and being shared via their URL. This is an experiment in using breeding + sharing as methods of exploring high complexity spaces. GAN's are simply the engine enabling this. Ganbreeder is very similar to, and named after, **Picbreeder.**
-
 Ganbreeder uses [these](https://tfhub.dev/deepmind/biggan-128/2) models (BigGAn).
 
 **Retaken to give the best of install** ..as it's a real hard wordk to understand how to ..coz not enough keys/steps described
+Pour l'instant le **docker (sous powershell) fait bien démarrer la base de données**, mais le calcul ne trouve pas les bons ports.
+Ensuite le localhost est refusé. Du coup, pas de frontend ni backend.
+Mais j'avais chgé les ports (5000-> 5566 et 8888 -> 8877) et ça semblait donner une image (que je n'ai pu ressortir) -23082020
 
 ## How to use
 tentative d'install sous WSL2 (un linux sous windows10) qui possède aussi les drivers gpu ..
@@ -13,8 +14,8 @@ mais qui bug lors des pip installs alors que sous powershell c ok (car anaconda 
 ### Prerequisites
  * docker à installer facilement sous win10PRO, ... il contient le docker-compose aussi (pas sous linux).
 * Install Python 3 + pip (for the GAN server) (sous win10: pip a bien ts les requirements)
-* Install NodeJS + npm (for the frontend) (installé en 10s avec pip sous powershel .. !! 
- * pip install nodejs puis pip install nodejs npm (module de plus...)
+* Install NodeJS + npm (for the frontend) (installé en 10s avec pip sous powershel .. !! ---> voir comment nodejs démarre une page ?
+* pip install nodejs puis pip install nodejs npm (module de plus...)
 * Install a PostgreSQL server - (par défaut il semble installé dans un docker, ts les fichiers du requirements  servent au server sous docker)
 ** lequel s'est bien installé avec pip ( pip install postgres )
 
@@ -28,12 +29,13 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 * seulemnt ensuite c'est sous docker-compose que ça va chercher le requirements.txt et s'installer (au moment du docker-compose build)
 
 ### Start it !
-* on démarre un essai avec  dans le rép \server powershell: docker-compose up 
-* 2 - ensuite ouverture d'une seconde console.. powershel.. et docker-compose exec server node make_randoms.js
-* et qd installé : on peut reprendre avec -   docker-compose restart server
-* il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? vérifier cette partie dite publique !
+* 1 commencer (peut-être) dans le rép \server powershell: docker-compose build
+* 1b on démarre un essai avec  dans le rép \server powershell: docker-compose up 
+* 2 - ensuite ouverture d'une seconde console.. powershel avec docker-compose exec server node make_randoms.js
+* et **qd installé** : on peut reprendre avec docker-compose restart server
+* il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? --> vérifier cette partie dite publique !
 * et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js
-* le tout est stoppé avec   -   docker-compose down
+* **stopper** avec   -   docker-compose down
 aussi docker-compose up -d    starts the containers in the background and leaves them running.
 
 
@@ -41,9 +43,9 @@ aussi docker-compose up -d    starts the containers in the background and leaves
 * pip upgrade : utiliser simplement : easy_install pip
 * docker-compose down pour arrêter et .. rebuild:  docker-compose build puis redémarre: 
 * aussi dans le docker-compose.YAML ..   # changer  les ports écrit en double - "5432:5432"  en "5432" (vu sur un forum ...
-* all done .. donc le programme a bien tourné ..mais l'image n'est pas là !? vérif si en répertoire ...\ganbreeder\server\public\img ? y a des images là.
+* all done .. *donc le programme a bien tourné ..mais l'image n'est pas là !? --> vérif si en répertoire ...\ganbreeder\server\public\img ? y a des images là.*
 
-### Launch the GAN server
+### sous linux: Launch the GAN server
 ```bash
 cd gan_server
 # Install dependencies
@@ -53,15 +55,16 @@ python server.py
 ```
 Your GAN server is available at http://localhost:5000/
 
-### Configure the frontend
-For quick hacking, if you have Docker at your disposal, you can spawn a PostgreSQL database like so:
+* Configure the frontend
+For quick hacking, with Docker, you can spawn a PostgreSQL database like so:
+ici vérif si on doit laisser le double port 5432:5432 ? et si rien fnctionne tenter avec QUE 5432
 ```bash
 docker run -p 5432:5432 --name ganbreederpostgres -e POSTGRES_PASSWORD=ganbreederpostgres -d postgres
 ```
 With that simple scenario, the database and user would be `postgres` and the password would be `ganbreederpostgres`
 Copy the file `server/example_secrets.js` to `secrets.js` and modify it to fit your environment.
 
-### Launch the frontend
+* Launch the frontend
 ```bash
 cd server
 npm install
@@ -78,13 +81,14 @@ Your frontend is available at http://localhost:8888/
 
 ### docker-compose setup
 
-Make sure that [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/) are installed.
-
-Start the containers:
+Make sure that [docker](https://docs.docker.com/install/) 
+and [docker-compose](https://docs.docker.com/compose/install/) are installed.
+**Start the containers:**
 ```bash
 docker-compose up
 ```
-Your frontend is available at http://localhost:8888/, backend at http://localhost:5000/.
+Your frontend is available at http://localhost:8888/,
+backend at http://localhost:5000/.
 Initial backend setup can take few minutes.
 
 If this is the first time you are running the project you might want to generate some random images:
@@ -97,5 +101,5 @@ docker-compose restart server
 ```
 
 pour memoire: 
-* This code was made in a weekend and hasn't been cleaned up or documented yet. There are also improvements to make to scalability.
-* It is also inspired by an earlier project of mine [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.*
+* There are also improvements to make to scalability.
+* It is also inspired by an earlier project [Facebook Graffiti](http://www.joelsimon.net/facebook-graffiti.html) which demonstrated the creative capacity of crowds.*
