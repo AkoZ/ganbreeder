@@ -54,6 +54,20 @@ pip install -r requirements.txt
 python server.py
 ```
 Your GAN server is available at http://localhost:5000/
+### Erreurs recontrées sour powershell (j)
+...\ganbreeder\gan_server> python server.py
+Traceback (most recent call last):
+  File "server.py", line 6, in <module>
+    import tensorflow as tf
+  File "\Anaconda3\lib\site-packages\tensorflow\__init__.py", line 28, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "\Anaconda3\lib\site-packages\tensorflow\python\__init__.py", line 47, in <module>
+    import numpy as np
+  File "\Anaconda3\lib\site-packages\numpy\__init__.py", line 140, in <module>
+    from . import _distributor_init
+  File "\Anaconda3\lib\site-packages\numpy\_distributor_init.py", **line 34**, in <module>
+    from . **import _mklinit**
+ImportError: DLL load failed: Le module spécifié est introuvable. trouver quel dll ?
 
 * Configure the frontend
 For quick hacking, with Docker, you can spawn a PostgreSQL database like so:
