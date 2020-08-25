@@ -53,7 +53,9 @@ pip install -r requirements.txt
 # And go...
 python server.py
 ```
-Your GAN server is available at http://localhost:5000/
+Your GAN server is available at http://localhost:5000/ 
+*et 127.0.0.1 est l'adresse de protocole Internet (IP) de bouclage, également appelée «localhost».*
+
 ### Erreurs recontrées sour powershell (j)
 ...\ganbreeder\gan_server> python server.py
 ```bash
