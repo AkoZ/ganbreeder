@@ -45,6 +45,8 @@ aussi docker-compose up -d    starts the containers in the background and leaves
 * aussi dans le docker-compose.YAML ..   # changer  les ports écrit en double - "5432:5432"  en "5432" (vu sur un forum ...
 * all done .. *donc le programme a bien tourné ..mais l'image n'est pas là !? --> vérif si en répertoire ...\ganbreeder\server\public\img ? y a des images là.*
 
+###vu le gitignore.. et cette adresse: https://github.com/AkoZ/ganbreeder/commit/ff833751e87f16ca43701cf924c8ed4f348e4b2e#diff-bc37d034bad564583790a46f19d807abfe519c5671395fd494d8cce506c42947 qui permet de voir tous les fichiers modifiés (enlèvement et/ou ajout et en tout cas enlève la partie S3 !.. ;)
+
 ### sous linux: Launch the GAN server
 ```bash
 cd gan_server
