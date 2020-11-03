@@ -34,7 +34,7 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 * 2 - ensuite ouverture d'une seconde console.. powershel avec docker-compose exec server node make_randoms.js
 * et **qd installé** : on peut reprendre avec docker-compose restart server
 * il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? --> vérifier cette partie dite publique !
-* et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js
+* et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js (voir la modif (enlever du gitignore)
 * **stopper** avec   -   docker-compose down
 aussi docker-compose up -d    starts the containers in the background and leaves them running.
 
@@ -110,6 +110,7 @@ docker-compose up
 Your frontend is available at http://localhost:8888/,
 backend at http://localhost:5000/.
 Initial backend setup can take few minutes.
+** si le localhost donne une err-connection_refused: I have changed everything from .localhost to .local and everything works as normal.
 
 If this is the first time you are running the project you might want to generate some random images:
 ```bash
