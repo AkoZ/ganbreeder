@@ -57,6 +57,7 @@ python server.py
 ```
 Your GAN server is available at http://localhost:5000/ 
 *et 127.0.0.1 est l'adresse de protocole Internet (IP) de bouclage, également appelée «localhost».*
+* si le localhost donne une err-connection_refused: I have changed everything from .localhost to .local and everything works as normal.*
 
 ### Erreurs recontrées sour powershell (j)
 ...\ganbreeder\gan_server> python server.py
@@ -110,7 +111,6 @@ docker-compose up
 Your frontend is available at http://localhost:8888/,
 backend at http://localhost:5000/.
 Initial backend setup can take few minutes.
-** si le localhost donne une err-connection_refused: I have changed everything from .localhost to .local and everything works as normal.
 
 If this is the first time you are running the project you might want to generate some random images:
 ```bash
