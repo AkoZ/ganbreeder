@@ -35,8 +35,11 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 * et **qd installé** : on peut reprendre avec docker-compose restart server
 * il va chercher à partir du fichier /server/save_results.js un serveur AWS (amazon ??) S3 .. ?? --> vérifier cette partie dite publique !
 * et pour le coup, une image est récupérée sur le serveur https://s3.amazonaws.com/ganbreederpublic ! depuis server.js (voir la modif (enlever du gitignore)
-* **stopper** avec   -   docker-compose down cefichier est accessible et contient 
+* **stopper** avec   -   docker-compose down ce fichier est accessible et contient 
+* aussi docker-compose up -d    starts the containers in the background and leaves them running.
+
 ```bash 
+/ganbreederpublic contient: 
 <ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
 <Name>ganbreederpublic</Name>
 <Prefix/>
@@ -50,9 +53,9 @@ je n'ai pas indiqué ces versions mais les dernières à jour ! .. (7aout2020)
 <Size>49342</Size>
 <StorageClass>STANDARD</StorageClass>
 </Contents>
-plusieurs fois le paquet <contents> puis se ferme avec </ListBucketResult>
+... plusieurs fois le paquet <contents> puis se ferme avec </ListBucketResult>
 ```
-aussi docker-compose up -d    starts the containers in the background and leaves them running.
+
 
 
 ### Problèmes rencontrés et résolus .. mais mal notés
